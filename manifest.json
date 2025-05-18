@@ -1,20 +1,22 @@
 {
-  "manifest_version": 3,
-  "name": "Get the F* Answer",
+  "name": "Get F* Answer",
   "version": "1.0",
-  "description": "Right-click to summon Gemini and cheat quizzes like a boss.",
+  "manifest_version": 3,
+  "description": "Get quick answers for multiple choice questions",
   "permissions": ["contextMenus", "scripting", "activeTab"],
   "background": {
     "service_worker": "background.js"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
+  "host_permissions": ["<all_urls>"],
   "action": {
-    "default_title": "Get the F* Answer"
+    "default_title": "Get F* Answer"
+  },
+  "commands": {
+    "get-answer": {
+      "suggested_key": {
+        "default": "Alt+M"
+      },
+      "description": "Get the F* Answer for selected text"
+    }
   }
 }
-
